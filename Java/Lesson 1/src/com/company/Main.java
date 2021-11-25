@@ -1,16 +1,16 @@
 package com.company;
 
-import java.awt.geom.NoninvertibleTransformException;
 import java.io.IOException;
 
-public class Main {
+public class Main extends AnswerAdapter{
 
     public static void main(String[] args) {
 	// write your code here
         ConsoleReader reader = new ConsoleReader();
         ConsoleWriter writer = new ConsoleWriter();
+        AnswerAdapter adapter = new AnswerAdapter();
 
-        // ask questions
+        // ask questionss
         String q1 = "Do you like vegetables?";
 
         String good = "You are a healthy person!";
@@ -20,7 +20,7 @@ public class Main {
         writer.write(q1);
 
         //read response
-        Boolean ans1 = reader.readLine().equals("Yep");
+        Boolean ans1 = adapter.contains(reader.readLine());
 
         //TODO
         // the reader should accept the following values as true:
